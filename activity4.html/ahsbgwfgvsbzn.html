@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Conditional statements</h1>
-    <p>Click on the button to get a greetings!!!</p>
+    <h1>Conditional Statements</h1>
+    <p>Click on the button to get a greeting</p>
     <button onclick="greet()">Click me</button>
     <p id="hour"></p>
     <p id="greet"></p>
@@ -24,12 +51,8 @@
                 greetings = "Good evening";
             }
 
-            document.getElementById("hour").innerHTML = "The time is:" + hour + ":" + min;
-            
-            // Infinite loop
-            while (true) {
-                // This will make the browser unresponsive
-            }
+            document.getElementById("hour").innerHTML = "The time is: " + hour + ":" + min;
+            document.getElementById("greet").innerHTML = greetings;
         }
     </script>
 </body>
