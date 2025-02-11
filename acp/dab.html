@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers and Current Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Numbers and Current Date</h1>
+    <button onclick="displayData()">Display Data</button>
+    <p id="randomNumbers"></p>
+    <p id="currentDate"></p>
+    <p id="randomNumber"></p>
+
+    <script>
+        function displayData() {
+            // Generate a random set of numbers
+            let randomNumbers = '';
+            for (let i = 0; i < 10; i++) {
+                randomNumbers += Math.floor(Math.random() * 100) + 1 + ' ';
+            }
+            document.getElementById('randomNumbers').innerText = `Random Numbers: ${randomNumbers}`;
+
+            // Get the current date
+            let currentDate = new Date();
+            document.getElementById('currentDate').innerText = `Current Date: ${currentDate.toDateString()}`;
+
+            // Generate a random number
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('randomNumber').innerText = `Random Number: ${randomNumber}`;
+        }
+    </script>
+</body>
+</html>
