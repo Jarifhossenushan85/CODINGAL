@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers with While Loop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Numbers with While Loop</h1>
+    <p id="output"></p>
+    <button onclick="printRandomNumbers()">Print Random Numbers</button>
+
+    <script>
+        function printRandomNumbers() {
+            let output = '';
+            let count = 0;
+            while (count < 10) {
+                let randomNumber = Math.floor(Math.random() * 100) + 1;
+                output += randomNumber + ' ';
+                count++;
+            }
+            document.getElementById('output').innerText = output;
+        }
+    </script>
+</body>
+</html>
