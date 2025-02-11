@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #chatbox {
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .user {
+            text-align: right;
+            color: blue;
+        }
+        .bot {
+            text-align: left;
+            color: green;
+        }
+    </style>
 </head>
-<body>
-    <h1> Type conversion </h1>
-    <p id="error"></p>
+2<body>
+    <h1>Simple AI Chatbot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type your message here...">
+    <button onclick="sendMessage()">Send</button>
 
     <script>
-    try{
-        // function addalert(message){
-        //   alert(message);
-    }
-    catch(error){
-        document.getElementById('error').innerHTML = error.message;
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim() === '') return;
 
-    }
-        
+            displayMessage(userInput, 'user');
+            document.getElementById('userInput').value = '';
+
+            const botResponse = getBotResponse(userInput);
+            setTimeout(() => displayMessage(botResponse, 'bot'), 500);
+        }
+
+        function displayMessage(message, sender) {
+            const chatbox = document.getElementById('chatbox');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            messageElement.innerText = message;
+            chatbox.appendChild(messageElement);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            input = input.toLowerCase();
+            if (input.includes('hello')) {
+                return 'Hello! How can I help you today?';
+            } else if (input.includes('how are you')) {
+                return 'I am just a bot, but I am doing great! How about you?';
+            } else if (input.includes('your name')) {
+                return 'I am a simple AI chatbot.';
+            } else {
+                return 'I am not sure how to respond to that.';
+            }
+        }
     </script>
 </body>
 </html>
-
