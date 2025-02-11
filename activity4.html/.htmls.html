@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Objects and Arrays</h1>
+    <p id="objectOutput"></p>
+    <p id="arrayOutput"></p>
+    <p id="joinedArray"></p>
+    <p id="poppedArray"></p>
+    <button onclick="displayData()">Display Data</button>
+
+    <script>
+        function displayData() {
+            // Create an object
+            let person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 30,
+                city: "New York"
+            };
+
+            // Create an array
+            let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+            // Display object properties using keys
+            let objectOutput = `Name: ${person.firstName} ${person.lastName}, Age: ${person.age}, City: ${person.city}`;
+            document.getElementById('objectOutput').innerText = objectOutput;
+
+            // Display array elements using index values
+            let arrayOutput = `First fruit: ${fruits[0]}, Second fruit: ${fruits[1]}, Third fruit: ${fruits[2]}`;
+            document.getElementById('arrayOutput').innerText = arrayOutput;
+
+            // Display the whole array using join function
+            let joinedArray = fruits.join(', ');
+            document.getElementById('joinedArray').innerText = `Joined array: ${joinedArray}`;
+
+            // Remove the last element using pop function and display the array
+            fruits.pop();
+            let poppedArray = fruits.join(', ');
+            document.getElementById('poppedArray').innerText = `Array after pop: ${poppedArray}`;
+        }
+    </script>
+</body>
+</html>

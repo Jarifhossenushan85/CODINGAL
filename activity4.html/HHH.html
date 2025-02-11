@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Mapping and Sorting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Mapping and Sorting</h1>
+    <p>Original Array: <span id="originalArray"></span></p>
+    <p>Mapped Array: <span id="mappedArray"></span></p>
+    <p>Ascending Order: <span id="ascendingOrder"></span></p>
+    <p>Descending Order: <span id="descendingOrder"></span></p>
+    <button onclick="processArray()">Process Array</button>
+
+    <script>
+        function processArray() {
+            // Original array
+            let originalArray = [5, 3, 8, 1, 2];
+            document.getElementById('originalArray').innerText = originalArray.join(', ');
+
+            // Map the array with a number (e.g., multiply each element by 2)
+            let mappedArray = originalArray.map(num => num * 2);
+            document.getElementById('mappedArray').innerText = mappedArray.join(', ');
+
+            // Sort the mapped array in ascending order
+            let ascendingOrder = [...mappedArray].sort((a, b) => a - b);
+            document.getElementById('ascendingOrder').innerText = ascendingOrder.join(', ');
+
+            // Sort the mapped array in descending order
+            let descendingOrder = [...mappedArray].sort((a, b) => b - a);
+            document.getElementById('descendingOrder').innerText = descendingOrder.join(', ');
+        }
+    </script>
+</body>
+</html>
