@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Try Catch Example</h1>
+    <button onclick="generateError()">Generate Error</button>
+    <p id="output"></p>
+
+    <script>
+        function generateError() {
+            const outputElement = document.getElementById('output');
+            outputElement.innerText = '';
+
+            try {
+                // Intentionally create an error
+                let result = nonExistentFunction();
+            } catch (error) {
+                // Display the error message
+                outputElement.innerText = `Error: ${error.message}`;
+                outputElement.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
