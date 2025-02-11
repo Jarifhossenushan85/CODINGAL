@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Async and Await Example</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <p id="output"></p>
+
+    <script>
+        // Simulate an asynchronous function that fetches data
+        async function fetchData() {
+            const outputElement = document.getElementById('output');
+            outputElement.innerText = 'Fetching data...';
+
+            try {
+                const data = await getData();
+                outputElement.innerText = `Data fetched: ${data}`;
+            } catch (error) {
+                outputElement.innerText = `Error: ${error.message}`;
+            }
+        }
+
+        // Simulate an asynchronous function that returns data after a delay
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const success = true; // Change to false to simulate an error
+                    if (success) {
+                        resolve('Hello, World!');
+                    } else {
+                        reject(new Error('Failed to fetch data'));
+                    }
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
