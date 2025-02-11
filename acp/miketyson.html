@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Arguments and Trigonometric Values</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sum of Arguments and Trigonometric Values</h1>
+    <button onclick="calculateSumAndTrig()">Calculate</button>
+    <p id="sumOutput"></p>
+    <p id="trigOutput"></p>
+
+    <script>
+        function calculateSumAndTrig() {
+            const sumOutput = document.getElementById('sumOutput');
+            const trigOutput = document.getElementById('trigOutput');
+
+            // Function to sum arguments
+            function sumArguments(...args) {
+                return args.reduce((acc, curr) => acc + curr, 0);
+            }
+
+            // Calculate sum of arguments
+            const sum = sumArguments(1, 2, 3, 4, 5);
+            sumOutput.innerText = `Sum of arguments: ${sum}`;
+
+            // Calculate trigonometric values
+            const angle = Math.PI / 4; // 45 degrees
+            const sinValue = Math.sin(angle);
+            const cosValue = Math.cos(angle);
+            const tanValue = Math.tan(angle);
+
+            trigOutput.innerText = `sin(45°): ${sinValue.toFixed(2)}, cos(45°): ${cosValue.toFixed(2)}, tan(45°): ${tanValue.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
