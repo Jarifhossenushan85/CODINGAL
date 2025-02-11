@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascading Effects with CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #aaa;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .box {
+            width: 300px;
+            height: 150px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 5px solid #4682b4;
+            background-color: #e0e0e0;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.1);
+        }
+        .text-effect {
+            color: #ff6347;
+            text-decoration: underline;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cascading Effects with CSS</h1>
+    <p>This is an example paragraph to demonstrate the use of different cascading effects in CSS. The text is styled with various properties to show how cascading effects work.</p>
+    <div class="box">
+        Hover over this box to see the scaling effect.
+    </div>
+    <p class="text-effect">this is a text with different cascading effects applied to it.</p>
+</body>
+</html>
