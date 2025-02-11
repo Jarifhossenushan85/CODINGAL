@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class with Static Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class with Static Method</h1>
+    <p id="output"></p>
+    <button onclick="displayProperties()">Display Properties</button>
+
+    <script>
+        // Define a class with a static method
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            static species() {
+                return "Mammal";
+            }
+
+            getDetails() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            }
+        }
+
+        // Inherit the class
+        class Dog extends Animal {
+            constructor(name, age, breed) {
+                super(name, age);
+                this.breed = breed;
+            }
+
+            getDetails() {
+                return `${super.getDetails()}, Breed: ${this.breed}`;
+            }
+        }
+
+        // Function to display properties
+        function displayProperties() {
+            const myDog = new Dog("Buddy", 3, "Golden Retriever");
+            const species = Animal.species();
+            const details = myDog.getDetails();
+
+            document.getElementById('output').innerText = `Species: ${species}\n${details}`;
+        }
+    </script>
+</body>
+</html>
