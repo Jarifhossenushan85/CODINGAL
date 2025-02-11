@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 50px;
+        }
+        a {
+            color: #4682b4;
+            text-decoration: none;
+            padding: 5px;
+        }
+        a:hover {
+            color: #ff6347;
+            text-decoration: underline;
+        }
+        a:active {
+            color: #32cd32;
+        }
+        a:visited {
+            color: #6a5acd;
+        }
+        a:first-child {
+            font-weight: bold;
+        }
+        p::first-line {
+            font-weight: bold;
+            color: #4682b4;
+        }
+        p::first-letter {
+            font-size: 2em;
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Pseudo-Classes</h1>
+    <p>This is an example paragraph to demonstrate the use of CSS pseudo-classes. The first line and the first letter of this paragraph are styled differently using pseudo-classes.</p>
+    <a href="#">First Link</a>
+    <a href="#">Second Link</a>
+    <a href="#">Third Link</a>
+</body>
+</html>
