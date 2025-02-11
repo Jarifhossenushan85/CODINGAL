@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Multiplication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #5a9bd4;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Multiplication</h1>
+    <button onclick="performMultiplication()">Multiply Numbers</button>
+    <p id="output"></p>
+
+    <script>
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function performMultiplication() {
+            const num1 = 5;
+            const num2 = 10;
+            const result = multiply(num1, num2);
+            document.getElementById('output').innerText = `The result of multiplying ${num1} and ${num2} is ${result}.`;
+        }
+    </script>
+</body>
+</html>
