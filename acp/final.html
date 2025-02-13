@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #a8a5a0;
+        }
+        .navbar {
+            background-color: #e9910e;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: rgb(199, 100, 8);
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            color: #f78809;
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="banner">
+        <h1>Welcome to My Website</h1>
+    </div>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>This is a sample website created to demonstrate a layout with a navigation bar and a banner image. for example</p>
+    </div>
+</body>
+</html>
